@@ -1,0 +1,33 @@
+---
+title: "Assignment Leaflet"
+date: '`r format(Sys.Date(), "%d %B, %Y")`'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Tourist Attractions in Rotterdam
+
+Rotterdam is the second largest city in The Netherlands. This destination is popular for its many interesting attractions and its beautiful architecture.
+In the map below you can find some top tourist attractions!
+
+```{r Map Rotterdam attractions}
+library(leaflet)
+rdam <- leaflet() %>%
+    addTiles() %>%
+    addMarkers(lat = 51.9200601, lng = 4.4868003, popup = "Markthal") %>%
+    addMarkers(lat = 51.920158, lng = 4.4907024, popup = "The Cube Houses") %>%
+    addMarkers(lat = 51.9215168, lng = 4.4855175, popup = "Great St. Lawrence Church") %>%
+    addMarkers(lat = 51.9173445, lng = 4.4891095, popup = "The Red Apple") %>%
+    addMarkers(lat = 51.9142145, lng = 4.4733407, popup = "Museum Boijmans Van Beuningen") %>%
+    addMarkers(lat = 51.9156191, lng = 4.4723368, popup = "Huis Sonneveld") %>%
+    addMarkers(lat = 51.9054439, lng = 4.4666374, popup = "The Euromast") %>%
+    addMarkers(lat = 51.9105752, lng = 4.4825352, popup = "Boat Tours (Spido)") %>%
+    addMarkers(lat = 51.9202978, lng = 4.4787379, popup = "Shopping District and Bijenkorf") %>%
+    setView(lat = 51.9141607, lng = 4.4834428, zoom = 15)
+rdam
+
+```
+
